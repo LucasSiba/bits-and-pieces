@@ -27,7 +27,7 @@ main(int argc, char** argv)
     hints.ai_flags = AI_NUMERICSERV;
 
     if ((rv = getaddrinfo(argv[1], argv[2], &hints, &servinfo)) != 0) {
-        fprintf(stderr, "%s : getaddrinfo failed lookup: %s\n", argv[1], gai_strerror(rv));
+        printf("getaddrinfo failed lookup for %s: %s\n", argv[1], gai_strerror(rv));
         exit(1);
     }
 
@@ -56,7 +56,7 @@ main(int argc, char** argv)
             printf("Connected to %s on port %s\n", argv[1], argv[2]);
         }
     } else {
-        printf("\nFailed to connect to %s on port %s\n\n", argv[1], argv[2]);
+        printf("Failed to connect to %s on port %s\n", argv[1], argv[2]);
     }
 
     close(sockfd);
