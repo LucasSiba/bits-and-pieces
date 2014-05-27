@@ -23,20 +23,20 @@ main(int argc, char ** argv) {
     for (p = servinfo; p != NULL; p = p->ai_next) {
 
         if (p->ai_family == AF_INET) {
-            printf("AF_INET (IPv4) - ");
-        } else { // AF_INT6
-            printf("AF_INT6 (IPv6) - ");
+            printf("AF_INET  (IPv4) - ");
+        } else {
+            printf("AF_INET6 (IPv6) - ");
         }
 
         if (p->ai_socktype == SOCK_STREAM) {
             printf("SOCK_STREAM - ");
-        } else { // SOCK_DGRAM
+        } else {
             printf("SOCK_DGRAM - ");
         }
 
         if (p->ai_protocol == IPPROTO_TCP) {
             printf("IPPROTO_TCP - ");
-        } else { // IPPROTO_UDP
+        } else {
             printf("IPPROTO_UDP - ");
         }
 
